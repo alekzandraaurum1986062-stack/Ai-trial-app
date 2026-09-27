@@ -16,12 +16,14 @@
     <el-tag v-if="isTest" size="large" class="fixed bottom-4 right-4 z-50" type="warning">
       {{ $t('index.button.testEnv') }}
     </el-tag>
+    <speed-insights />
   </el-config-provider>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { ElConfigProvider, ElTag } from 'element-plus';
+import { SpeedInsights } from '@vercel/speed-insights/vue';
 import AuthPanel from './components/common/AuthPanel.vue';
 import DesktopDragBar from './components/common/DesktopDragBar.vue';
 import QuotaExhaustedDialog from './components/common/QuotaExhaustedDialog.vue';
@@ -64,6 +66,7 @@ export default defineComponent({
   components: {
     ElConfigProvider,
     ElTag,
+    SpeedInsights,
     AuthPanel,
     DesktopDragBar,
     QuotaExhaustedDialog
